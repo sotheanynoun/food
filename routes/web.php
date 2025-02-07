@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
@@ -40,3 +41,18 @@ Route::post('/admin/password_submit', [AdminController::class,'AdminPasswordSubm
 Route::get('/admin/reset-password/{token}/{email}', [AdminController::class,'AdminResetPassword']);
 
 Route::post('/admin/reset_password_submit', [AdminController::class,'AdminResetPasswordSubmit'])->name('admin.reset_password_submit');
+
+
+
+///ALL ROUTE FOR CLIENT
+
+
+Route::middleware('client')->group(function(){
+    Route::get('/client/dashboard', [ClientController::class,'ClientDashboard'])->name('client.dashboard');
+});
+
+
+Route::get('/client/login', [ClientController::class,'ClientLogin'])->name('client.login');
+Route::get('/client/register', [ClientController::class,'ClientRegister'])->name('client.register');
+Route::post('/client/register/submit', [ClientController::class,'ClientRegisterSubmit'])->name('client.register.submit');
+Route::post('/client/login_submit', [ClientController::class,'ClientLoginSubmit'])->name('client.login_submit');
