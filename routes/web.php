@@ -81,6 +81,15 @@ Route::middleware('admin')->group(function(){
         Route::get('/delete/category/{id}','DeleteCategory')->name('delete.category');
 
     });
+    Route::controller(CategoryController::class)->group(function(){
+        Route::get('/all/city','AllCity')->name('all.city');
+        Route::get('/add/city','AddCity')->name('add.city');
+        Route::post('/city/store','CityStore')->name('city.store');
+        Route::get('/edit/city/{id}','EditCity')->name('edit.city');
+        Route::post('/city/update','CityUpdate')->name('city.update');
+        Route::get('/delete/city/{id}','DeleteCity')->name('delete.city');
+
+    });
     
 });
 
