@@ -18,24 +18,46 @@
               <li>
                   <a href="javascript: void(0);" class="has-arrow">
                       <i data-feather="grid"></i>
-                      <span data-key="t-apps">Apps</span>
+                      <span data-key="t-apps">Menu</span>
                   </a>
                   <ul class="sub-menu" aria-expanded="false">
                       <li>
-                          <a href="apps-calendar.html">
-                              <span data-key="t-calendar">Calendar</span>
+                          <a href="{{ route('all.menu') }}">
+                              <span data-key="t-calendar">All Menu</span>
                           </a>
                       </li>
 
                       <li>
                           <a href="apps-chat.html">
-                              <span data-key="t-chat">Chat</span>
+                              <span data-key="t-chat">Add Menu</span>
                           </a>
                       </li>
 
                       
                   </ul>
               </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                    <i data-feather="grid"></i>
+                    <span data-key="t-apps">Product</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                    <li>
+                        <a href="{{ route('all.product') }}">
+                            <span data-key="t-calendar">All Product</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="apps-chat.html">
+                            <span data-key="t-chat">Add Product</span>
+                        </a>
+                    </li>
+
+                    
+                </ul>
+            </li>
 
               <li>
                   <a href="javascript: void(0);" class="has-arrow">
@@ -86,7 +108,7 @@
 
           <div class="card sidebar-alert border-0 text-center mx-4 mb-0 mt-5">
               <div class="card-body">
-                  <img src="assets/images/giftbox.png" alt="">
+                  <img src="{{ asset('backend/assets/images/giftbox.png') }}" alt="">
                   <div class="mt-4">
                       <h5 class="alertcard-title font-size-16">Unlimited Access</h5>
                       <p class="font-size-13">Upgrade your plan from a Free trial, to select ‘Business Plan’.</p>

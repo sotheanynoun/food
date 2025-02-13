@@ -87,7 +87,7 @@
                       <a href="#!" class="text-reset notification-item">
                           <div class="d-flex">
                               <div class="flex-shrink-0 me-3">
-                                  <img src="assets/images/users/avatar-3.jpg" class="rounded-circle avatar-sm" alt="user-pic">
+                                  <img src="{{ asset('backend/assets/images/users/avatar-3.jpg') }}" class="rounded-circle avatar-sm" alt="user-pic">
                               </div>
                               <div class="flex-grow-1">
                                   <h6 class="mb-1">James Lemire</h6>
@@ -134,7 +134,7 @@
                       <a href="#!" class="text-reset notification-item">
                           <div class="d-flex">
                               <div class="flex-shrink-0 me-3">
-                                  <img src="assets/images/users/avatar-6.jpg" class="rounded-circle avatar-sm" alt="user-pic">
+                                  <img src="" class="rounded-circle avatar-sm" alt="user-pic">
                               </div>
                               <div class="flex-grow-1">
                                   <h6 class="mb-1">Salena Layfield</h6>
