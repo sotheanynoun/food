@@ -104,6 +104,8 @@ Route::middleware(['client'])->group(function(){
         Route::get('/delete/menu/{id}','DeleteMenu')->name('delete.menu');
 
     });
+
+    //for Product
     Route::controller(RestaurantController::class)->group(function(){
         Route::get('/all/product','AllProduct')->name('all.product');
         Route::get('/add/product','AddProduct')->name('add.product');
@@ -112,6 +114,18 @@ Route::middleware(['client'])->group(function(){
         Route::post('/product/update','ProductUpdate')->name('product.update');
         Route::get('/delete/product/{id}','DeleteProduct')->name('delete.product');
         Route::get('/changeStatus','ChangeStatus');
+
+    });
+
+
+    //for Gallery 
+    Route::controller(RestaurantController::class)->group(function(){
+        Route::get('/all/gallery','AllGallery')->name('all.gallery');
+        Route::get('/add/gallery','AddGallery')->name('add.gallery');
+        Route::post('/gallery/store','GalleryStore')->name('gallery.store');
+        Route::get('/edit/gallery/{id}','EditGallery')->name('edit.gallery');
+        Route::post('/gallery/update','GalleryUpdate')->name('gallery.update');
+        Route::get('/delete/gallery/{id}','DeleteGallery')->name('delete.gallery');
 
     });
 
