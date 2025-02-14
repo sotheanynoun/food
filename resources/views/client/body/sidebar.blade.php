@@ -28,7 +28,7 @@
                     </li>
 
                     <li>
-                        <a href="apps-chat.html">
+                        <a href="{{ route('add.menu') }}">
                             <span data-key="t-chat">Add Menu</span>
                         </a>
                     </li>
@@ -50,7 +50,7 @@
                     </li>
 
                     <li>
-                        <a href="apps-chat.html">
+                        <a href="{{ route('add.product') }}">
                             <span data-key="t-chat">Add Product</span>
                         </a>
                     </li>  
@@ -70,7 +70,7 @@
                     </li>
 
                     <li>
-                        <a href="apps-chat.html">
+                        <a href="{{ route('add.gallery') }}">
                             <span data-key="t-chat">Add Gallery</span>
                         </a>
                     </li> 
@@ -89,7 +89,7 @@
                     </li>
 
                     <li>
-                        <a href="apps-chat.html">
+                        <a href="{{ route('add.coupon') }}">
                             <span data-key="t-chat">Add Coupon</span>
                         </a>
                     </li> 
