@@ -269,7 +269,7 @@ class RestaurantController extends Controller
             $manager = new ImageManager(new Driver());
             $name_gen = hexdec(uniqid()).'.'.$gimg->getClientOriginalExtension();
             $img = $manager->read($gimg);
-            $img->resize(300,300)->save(public_path('upload/gallery/'.$name_gen));
+            $img->resize(800,800)->save(public_path('upload/gallery/'.$name_gen));
             $save_url = 'upload/gallery/'.$name_gen;
 
             Gallery::insert([
@@ -299,7 +299,7 @@ class RestaurantController extends Controller
             $manager = new ImageManager(new Driver());
             $name_gen= hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img->resize(500,500)->save(public_path('upload/gallery/'.$name_gen));
+            $img->resize(800,800)->save(public_path('upload/gallery/'.$name_gen));
             $save_url='upload/gallery/'.$name_gen;
 
            $gallery =  Gallery::find($gallery_id);
