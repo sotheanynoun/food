@@ -1,5 +1,5 @@
-@include('frontend.dashboard.header')
-
+@extends('frontend.dashboard.dashboard')
+@section('dashboard')
 
 
 @php
@@ -546,6 +546,4 @@ $populars = App\Models\Product::where('status',1)->where('client_id',$client->id
   </div>
 </section>
 
-
-
-@include('frontend.dashboard.footer')
+@endsection
