@@ -9,6 +9,7 @@ use App\Http\Controllers\Client\CouponController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ManageController;
 use App\Http\Controllers\Client\RestaurantController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\HomeController;
 
 // Route::get('/', function () {
@@ -183,3 +184,9 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('/restaurant/details/{id}','RestaurantDetails')->name('res.details');
     Route::post('/add-wish-list/{id}','AddWishList');
 });
+
+Route::controller(CartController::class)->group(function(){
+    Route::get('/add_to_cart/{id}','AddToCart')->name('add_to_cart');
+    Route::post('/cart/update-quantity','updateCartQuantity')->name('cart.updateQuantity');
+    Route::post('/cart/remove','CartRemove')->name('cart.remove');
+});        
