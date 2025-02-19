@@ -4,6 +4,7 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="csrf-token" content="{{ csrf_token() }}">
       <meta name="description" content="Askbootstrap">
       <meta name="author" content="Askbootstrap">
       <title>Osahan Eat - Online Food Ordering Website HTML Template</title>
@@ -43,9 +44,65 @@
       <script src="{{ asset('frontend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
       <!-- Select2 JavaScript-->
       <script src="{{ asset('frontend/vendor/select2/js/select2.min.js') }}"></script>
+
+
       <!-- Owl Carousel -->
       <script src="{{ asset('frontend/vendor/owl-carousel/owl.carousel.js') }}"></script>
       <!-- Custom scripts for all pages-->
       <script src="{{ asset('frontend/js/custom.js') }}"></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+      {{-- ------------- WishList Add Start -------------- --}}
+      <script type="text/javascript">
+         $.ajaxSetup({
+            headers:{
+               'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+            }
+         });
+
+      function addWishList(id){
+         // alert(id)
+         $.ajax({
+            type: "POST",
+            dataType: "json",
+            url:"/add-wish-list/"+id,
+            headers:{'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            success: function(data){
+
+               const Toast = Swal.mixin({
+                  toast: true,
+                  position: 'top-end',
+                  
+                  showConfirmButton: false,
+                  timer: 3000 
+            })
+            if ($.isEmptyObject(data.error)) {
+                    
+                    Toast.fire({
+                    type: 'success',
+                    icon: 'success', 
+                    title: data.success, 
+                    })
+
+            }else{
+               
+           Toast.fire({
+                    type: 'error',
+                    icon: 'error', 
+                    title: data.error, 
+                    })
+                }
+
+
+
+            }
+         })
+      }
+      </script>
    </body>
 </html>
